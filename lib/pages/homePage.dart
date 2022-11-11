@@ -1,9 +1,13 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:world/pages/detailPage.dart';
 import 'package:world/utils/appbar.dart';
 import 'package:world/utils/constant.dart';
 import 'package:world/utils/langList.dart';
 import 'package:world/utils/searchField.dart';
+import 'package:http/http.dart' as http;
+import '../model/network.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -14,9 +18,57 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   @override
+  void initState() {
+    setState(() {
+      getNetwork();
+    });
+    super.initState();
+  }
+
+  Future getNetwork() async {
+    setState(() async {
+      countriesName = await netWork.getAllCountries();
+      countriesFlag = await netWork.getAllCountriesFlag();
+    });
+  }
+
+  List<String> countriesName = [];
+  List<String> countriesFlag = [];
+  NetWork netWork = NetWork();
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: myAppBar,
+      floatingActionButton: FloatingActionButton(onPressed: (() async {
+        try {
+          const urlall = 'https://restcountries.com/v3.1/all';
+          final uri = Uri.parse(urlall);
+          var response = await http.get(uri);
+          if (response.statusCode == 200) {
+            var jasonData = jsonDecode(response.body);
+            List<dynamic> countriesName = [];
+            for (var country in jasonData) {
+              countriesName.add(country['name']);
+            }
+            print('Completed man');
+          }
+        } catch (e) {
+          print('e => $e');
+        }
+      }
+          //  async {
+          //   print('FetcheUser Called');
+          //   const url = 'https://restcountries.com/v3.1/all';
+          //   final uri = Uri.parse(url);
+          //   final response = await http.get(uri);
+          //   final body = response.body;
+          //   final json = jsonDecode(body.toString());
+          //   setState(() {
+          //     country = json['all'];
+          //   });
+          //   print('FetchUser completed');
+          // }
+          )),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 20),
         child: ListView(children: [
@@ -222,7 +274,37 @@ class _HomePageState extends State<HomePage> {
                       'Detail',
                       style: TextStyle(color: darkColor),
                     ))),
-          )
+          ),
+          //////Boom
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              height: 600,
+              child: ListView.builder(
+                itemCount: countriesName.length,
+                itemBuilder: (context, index) {
+                  return ListTile(
+                      title: Text(
+                        countriesName[index],
+                        style: const TextStyle(
+                          fontSize: 25,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      subtitle: Hero(
+                        tag: 'flag $index',
+                        child: SvgPicture.network(
+                          countriesFlag[index],
+                          width: 30,
+                          height: 120,
+                          fit: BoxFit.fitWidth,
+                        ),
+                      ),
+                      onTap: () {});
+                },
+              ),
+            ),
+          ) /////Boom
         ]),
       ),
     );
