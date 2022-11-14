@@ -1,15 +1,15 @@
 # This is Countries Explore App
 
 ### It's consisting of 2 screens:
-Landing Page
+Landing Page<br />
 Details Page
 
 ### The app supports features such as
 
-1.Filtering of the list and translations,
-2.Dark Mode, 
-3.Responsiveness to phone Orientation
-4.MVVM design architecture. 
+1.Filtering of the list and translations,<br />
+2.Dark Mode, <br />
+3.Responsiveness to phone Orientation<br />
+4.MVVM design architecture. <br />
 
 ### Libraries Used
 I made use of a few libraries to accomplish this project. Their names along with reasons why used are listed below:
