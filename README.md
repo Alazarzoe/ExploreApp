@@ -1,16 +1,31 @@
-# world
+# This is Countries Explore App 
 
-A new Flutter project.
+It's consisting of 2 screens:
+Landing Page
+Details Page
 
-## Getting Started
+#The app supports features such as 
 
-This project is a starting point for a Flutter application.
+1.Filtering of the list and translations,
+2.Dark Mode, 
+3.Responsiveness to phone Orientation
+4.MVVM design architecture. 
 
-A few resources to get you started if this is your first Flutter project:
+#Libraries Used
+I made use of a few libraries to accomplish this project. Their names along with reasons why used are listed below:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Connectivity_plus
+Google Fonts
+Grouped List
+Internet Connection Checker
+Font Awesome
+Provider
+intl
+Shared Preferences
+smooth_page_indicator
+Dio
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+#Links and Files
+
+Appetize link: https://appetize.io/app/zsoug7cjq6njsqepap3gu2hwxa?device=pixel4&osVersion=12.0&scale=75
