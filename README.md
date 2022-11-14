@@ -14,16 +14,16 @@ Details Page
 ### Libraries Used
 I made use of a few libraries to accomplish this project. Their names along with reasons why used are listed below:
 
-Connectivity_plus,
-Google Fonts,
-Grouped List,
-Internet Connection Checker,
-Font Awesome,
-Provider,
-intl,
-Shared Preferences,
-smooth_page_indicator,
-Dio,
+Connectivity_plus,<br />
+Google Fonts,<br />
+Grouped List,<br />
+Internet Connection Checker,<br />
+Font Awesome,<br />
+Provider,<br />
+intl,<br />
+Shared Preferences,<br />
+smooth_page_indicator,<br />
+Dio,<br />
 
 
 ### Links and Files
