@@ -12,7 +12,7 @@ Details Page
 4.MVVM design architecture. <br />
 
 ### Libraries Used
-I made use of a few libraries to accomplish this project. Their names along with reasons why used are listed below:
+I made use of a few libraries to accomplish this project.
 
 Connectivity_plus,<br />
 Google Fonts,<br />
