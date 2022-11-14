@@ -35,8 +35,16 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
-  http:
-  flutter_svg: ^1.1.6
+  dio: ^4.0.6
+  shared_preferences: ^2.0.15
+  provider: ^6.0.4
+  font_awesome_flutter: ^10.2.1
+  internet_connection_checker: ^1.0.0+1
+  smooth_page_indicator: ^1.0.0+2
+  grouped_list: ^5.1.2
+  intl: ^0.17.0
+  connectivity_plus: ^3.0.2
+  google_fonts: ^3.0.1
 
 dev_dependencies:
   flutter_test:
@@ -60,8 +68,8 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  assets:
-    - lib/assets/images/
+  # assets:
+  #   - assets/images/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -74,14 +82,14 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  fonts:
-    - family: Kanit
-      fonts:
-        - asset: lib/assets/fonts/Kanit-SemiBold.ttf
+  # fonts:
+  #   - family: Kanit
+  #     fonts:
+  #       - asset: lib/assets/fonts/Kanit-SemiBold.ttf
 
-    - family: Poppins
-      fonts:
-        - asset: lib/assets/fonts/Poppins-Regular.ttf
+  #   - family: Poppins
+  #     fonts:
+  #       - asset: lib/assets/fonts/Poppins-Regular.ttf
 
   #         weight: 700
   #
